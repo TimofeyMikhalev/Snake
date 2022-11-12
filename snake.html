@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+
+    <div id="game">
+        
+        <div class="game-header">
+            <div class="game-score">
+                <span class="score-count"></span>
+            </div>
+        </div>
+
+        <div class="canvas-wrapper">
+            <canvas id="game-canvas" width="420" height="500"></canvas> 
+        </div>
+        
+        <!-- попап запуска игры -->
+        <div class="popap">
+            <div class="popap__title">
+                Начать игру!
+            </div>
+            <div class="popap__btn">
+                <button>Play</button>
+            </div>
+        </div>
+
+        <!-- попап game over -->
+        <div class="popap__over">
+            <div class="popap__title">
+                Game over!
+            </div>
+
+            <div class="popap__result">
+                Ваш результат: <div class="number_result"></div>
+            </div>
+
+            <div class="popap__return">
+                <button>Занова</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script src="main.js"></script>
+    <script src="snake.js"></script>
+</body>
+</html>
