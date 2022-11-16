@@ -1,6 +1,6 @@
 let scoreBlock; //отображение на странице очков
 let score = 0; //очки
-
+let recordArr = [];//массив где храниться рекорд
 //настройки игры
 const config = {
     step: 0, //для пропуска игрового цикла
@@ -19,12 +19,6 @@ const snake = {
     maxTails: 3, //количество ячеек
 
 }
-// for (let i = 0; i < snake.tails.length; i++) {
-//     snake.tails[i].style.background = 'red';
-//     document.write(snake.tails[i]);
-//     console.log(snake.tails[i])
-// }
-
 
 //координаты ягоды
 let berry = {
@@ -100,7 +94,6 @@ function drawSnake(){
         if(index == 0){
             //красим голову в ярко красный
             context.fillStyle = '#154701';
-   
         } else{
             //красим тело в тусклый
             context.fillStyle = '#1c6300';
@@ -141,12 +134,16 @@ function collisionBorder(){
     } 
 }
 
+
+
 //обнуление всех значений когда змейка сьедает саму себя
 function refreshGame(){
     popapOver.style.display = 'flex';
 
     document.querySelector('.number_result').innerHTML = score;
     
+  
+
     score = 0;
     drawScore();
 
@@ -184,15 +181,23 @@ function randomPositionBerry(){
 
 //функция для набора очков:
 
+
+
     //увеличивает текущее колич очков на 1
     function inScore(){
         score++;
+    
         drawScore();
     }
     //отображает это на странице(кол очков)
     function drawScore(){
         scoreBlock.innerHTML = score;
+        
+        //отображение рекорда
+        recordArr.push(score);
+        document.querySelector('.number_rekord').innerHTML = Math.max(...recordArr);
     }
+
 
 //функция для рандома
 function getRandomInt(min, max){

@@ -138,3 +138,19 @@ button:hover{
 .number_result{
 	margin-left: 5px;
 }
+
+.popap__rekord{
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.5;
+
+	margin-bottom: 20px;
+}
+
+.number_rekord{
+	margin-left: 5px;
+}
